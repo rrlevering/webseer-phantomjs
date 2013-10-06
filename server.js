@@ -5,8 +5,8 @@ var server = require('webserver').create(),
 
 var service = server.listen(port, function(request, response) {
 
-	if(request.method == 'GET' && request.post.url){
-		var url = request.post.url;
+	if(request.method == 'GET' && request.get.url){
+		var url = request.get.url;
 
 		request_page(url, function(htmlContents){
 			response.statusCode = 200;
