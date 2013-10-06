@@ -6,7 +6,7 @@ var server = require('webserver').create(),
 var service = server.listen(port, function(request, response) {
 
 	if(request.method == 'GET' && request.url){
-		var url = request.url;
+		var url = request.url.replace("/?url=", "");
 
 		request_page(url, function(htmlContents){
 			response.statusCode = 200;
